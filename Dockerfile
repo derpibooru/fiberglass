@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ADD https://api.github.com/repos/philomena-dev/FFmpeg/git/refs/heads/release/5.1 /tmp/FFmpeg_version.json
+ADD https://api.github.com/repos/philomena-dev/FFmpeg/git/refs/heads/release/6.1 /tmp/FFmpeg_version.json
 ADD https://api.github.com/repos/philomena-dev/cli_intensities/git/refs/heads/master /tmp/cli_intensities_version.json
 ADD https://api.github.com/repos/philomena-dev/mediatools/git/refs/heads/master /tmp/mediatools_version.json
 
@@ -34,7 +34,7 @@ RUN apk update \
     && git clone https://github.com/philomena-dev/mediatools /opt/mediatools \
     && ln -s /usr/lib/librsvg-2.so.2 /usr/lib/librsvg-2.so \
     && cd /opt/mediatools \
-    && git checkout 6d01b3bb23f04cb6d9dc378983b038f2ff000301 \
+    && git checkout 6897ca85519bf84077b1509523d712948432152c \
     && make -j$(nproc) install \
     && rm -rf /opt/cli_intensities \
     && rm -rf /opt/mediatools \
